@@ -34,6 +34,17 @@ public class ArrayOfArrays
             }
         }
     }
+}
 
+class ArraysTesters
+{
+    public static void main(String[] araf)
+    {
+        ArrayOfArrays rawrs = new ArrayOfArrays();
 
+        int[] firstArray = {2, 4, 5};
+        int[] secondArray = {6, 7};
+
+        rawrs.findMedianOfOddArray(firstArray, secondArray);
+    }
 }
