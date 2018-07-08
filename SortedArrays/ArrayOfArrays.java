@@ -20,11 +20,11 @@ public class ArrayOfArrays
     {
         if (firstArray[firstArray.length - 1] > secondArray[secondArray.length - 1])
         {
-            return ((firstArray[0] + secondArray[secondArray.length - 1]) / 2);
+            return ((double)(firstArray[0] + secondArray[secondArray.length - 1]) / 2);
         }
         else
         {
-            return ((firstArray[secondArray.length - 1] + secondArray[0]) / 2);
+            return ((double)(firstArray[firstArray.length - 1] + secondArray[0]) / 2);
         }
     }
 
