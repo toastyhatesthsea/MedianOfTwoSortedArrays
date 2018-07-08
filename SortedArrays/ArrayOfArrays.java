@@ -5,16 +5,30 @@ public class ArrayOfArrays
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-        return 0;
+        if (nums1.length != nums2.length)
+        {
+            return findMedianOfNonEqualArrays(nums1, nums2);
+        }
+        else
+        {
+            return findMedianOfEqualArrayLengths(nums1, nums2);
+        }
 
     }
 
     public double findMedianOfEqualArrayLengths(int[] firstArray, int[] secondArray)
     {
-        if(firstArray[firstArray.length-1] > secondArray[secondArray.length])
+        if (firstArray[firstArray.length - 1] > secondArray[secondArray.length - 1])
+        {
+            return (firstArray[0] + secondArray[secondArray.length - 1]) / 2;
+        }
+        else
+        {
+            return (secondArray[secondArray.length - 1] + firstArray[0]) / 2;
+        }
     }
 
-    public double findMedianOfNonEvenArrays(int[] firstArray, int[] secondArray)
+    public double findMedianOfNonEqualArrays(int[] firstArray, int[] secondArray)
     {
         if (firstArray.length > secondArray.length)
         {
@@ -53,6 +67,6 @@ class ArraysTesters
         int[] firstArrayBigger = {5, 6, 7};
         int[] secondArraySmaller = {2, 4};
 
-        double answer = rawrs.findMedianOfNonEvenArrays(secondArraySmaller, firstArrayBigger);
+        double answer = rawrs.findMedianOfNonEqualArrays(secondArraySmaller, firstArrayBigger);
     }
 }
