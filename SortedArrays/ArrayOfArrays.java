@@ -61,8 +61,9 @@ class ArraysTesters
         int[] secondArraySmaller = {2, 4};
         int[] equalLengthArray = {2, 3, 4};
 
-        int[]
+        int[] oneThree = {1, 3};
+        int[] justTwo = {2};
 
-        double answer = rawrs.findMedianOfEqualArrayLengths(equalLengthArray, firstArrayBigger);
+        double answer = rawrs.findMedianOfEqualArrayLengths(oneThree, justTwo);
     }
 }
