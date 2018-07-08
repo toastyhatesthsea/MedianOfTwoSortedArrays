@@ -20,11 +20,11 @@ public class ArrayOfArrays
     {
         if (firstArray[firstArray.length - 1] > secondArray[secondArray.length - 1])
         {
-            return (firstArray[0] + secondArray[secondArray.length - 1]) / 2;
+            return ((firstArray[0] + secondArray[secondArray.length - 1]) / 2);
         }
         else
         {
-            return (secondArray[secondArray.length - 1] + firstArray[0]) / 2;
+            return ((firstArray[secondArray.length - 1] + secondArray[0]) / 2);
         }
     }
 
@@ -66,7 +66,8 @@ class ArraysTesters
 
         int[] firstArrayBigger = {5, 6, 7};
         int[] secondArraySmaller = {2, 4};
+        int[] equalLengthArray = {2, 3, 4};
 
-        double answer = rawrs.findMedianOfNonEqualArrays(secondArraySmaller, firstArrayBigger);
+        double answer = rawrs.findMedianOfEqualArrayLengths(equalLengthArray, firstArrayBigger);
     }
 }
