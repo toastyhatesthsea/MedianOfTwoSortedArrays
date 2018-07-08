@@ -45,6 +45,9 @@ class ArraysTesters
         int[] firstArray = {2, 4, 5};
         int[] secondArray = {6, 7};
 
-        rawrs.findMedianOfOddArray(firstArray, secondArray);
+        int[] firstArrayBigger = {5, 6, 7};
+        int[] secondArraySmaller = {2, 4};
+
+        double answer = rawrs.findMedianOfOddArray(secondArraySmaller, firstArrayBigger);
     }
 }
