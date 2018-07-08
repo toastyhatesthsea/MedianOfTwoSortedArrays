@@ -30,27 +30,20 @@ public class ArrayOfArrays
 
     public double findMedianOfNonEqualArrays(int[] firstArray, int[] secondArray)
     {
-        if (firstArray.length > secondArray.length)
+        if (firstArray[firstArray.length - 1] > secondArray[secondArray.length - 1])
         {
-            if (firstArray[firstArray.length - 1] > secondArray[0])
+            if (firstArray.length > secondArray.length)
             {
                 return firstArray[0];
             }
             else
             {
-                return firstArray[firstArray.length - 1];
+                return secondArray[secondArray.length - 1];
             }
         }
         else
         {
-            if (secondArray[secondArray.length - 1] > firstArray[firstArray.length - 1])
-            {
-                return secondArray[0];
-            }
-            else
-            {
-                return secondArray[secondArray.length - 1];
-            }
+            return firstArray[firstArray.length - 1];
         }
     }
 }
@@ -67,6 +60,8 @@ class ArraysTesters
         int[] firstArrayBigger = {5, 6, 7};
         int[] secondArraySmaller = {2, 4};
         int[] equalLengthArray = {2, 3, 4};
+
+        int[]
 
         double answer = rawrs.findMedianOfEqualArrayLengths(equalLengthArray, firstArrayBigger);
     }
