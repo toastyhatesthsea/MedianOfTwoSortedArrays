@@ -24,7 +24,14 @@ public class ArrayOfArrays
         }
         else
         {
-
+            if (secondArray[secondArray.length - 1] > firstArray[firstArray.length - 1])
+            {
+                return secondArray[0];
+            }
+            else
+            {
+                return secondArray[secondArray.length - 1];
+            }
         }
     }
 
