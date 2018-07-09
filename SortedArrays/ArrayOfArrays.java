@@ -37,6 +37,13 @@ public class ArrayOfArrays
             {
                 current++;
             }
+
+            if (arrayTwo[current] > arrayOne[0])
+            {
+                int temp = arrayOne[0];
+                arrayOne[0] = arrayTwo[current];
+                arrayTwo[current] = temp;
+            }
         }
 
     }
