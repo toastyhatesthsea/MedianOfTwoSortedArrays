@@ -1,17 +1,37 @@
 package SortedArrays;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ArrayOfArrays
 {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-
-
-
-        return 0;
-
+        if (nums1[nums1.length - 1] > nums2[nums2.length - 1])
+        {
+            return sortArrays(nums1, nums2);
+        }
+        else
+        {
+            return sortArrays(nums2, nums1);
+        }
     }
 
+
+    /**
+     * Sorts first array into second array
+     * @param arrayOne int[]
+     * @param arrayTwo int[]
+     * @return int[]
+     */
+    public double sortArrays(int[] arrayOne, int[] arrayTwo)
+    {
+
+
+
+    }
 
 }
 
