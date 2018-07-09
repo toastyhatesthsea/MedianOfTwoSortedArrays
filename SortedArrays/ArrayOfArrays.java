@@ -24,12 +24,20 @@ public class ArrayOfArrays
      * Sorts first array into second array
      * @param arrayOne int[]
      * @param arrayTwo int[]
-     * @return int[]
+     * @return double
      */
     public double sortArrays(int[] arrayOne, int[] arrayTwo)
     {
 
+        for(int i=0; arrayOne[i] < arrayTwo[arrayTwo.length - 1];)
+        {
+            int current = 0;
 
+            while (arrayTwo[current] < arrayOne[0])
+            {
+                current++;
+            }
+        }
 
     }
 
