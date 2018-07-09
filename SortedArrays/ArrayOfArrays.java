@@ -29,7 +29,7 @@ public class ArrayOfArrays
     public double sortArrays(int[] arrayOne, int[] arrayTwo)
     {
 
-        for(int i=0; arrayOne[i] < arrayTwo[arrayTwo.length - 1];)
+        if(arrayOne[0] < arrayTwo[arrayTwo.length - 1])
         {
             int current = 0;
 
@@ -46,6 +46,7 @@ public class ArrayOfArrays
             }
         }
 
+        return 0;
     }
 
 }
@@ -66,6 +67,6 @@ class ArraysTesters
         int[] oneThree = {1, 3};
         int[] justTwo = {2};
 
-        double answer = rawrs.findMedianSortedArrays(oneThree, justTwo);
+        double answer = rawrs.sortArrays(secondArray, firstArray);
     }
 }
