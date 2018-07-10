@@ -36,6 +36,7 @@ public class ArrayOfArrays
 
         double answer = 0;
         //First Array has largest integer
+        //Puts the array with the largest last digit as first parameter
         if (nums1[nums1.length - 1] > nums2[nums2.length - 1])
         {
             sortArrays(nums1, nums2);
@@ -86,6 +87,9 @@ public class ArrayOfArrays
         }
 
         //Uneven arrays
+
+
+
         if (totalLength % 2 != 0)
         {
             int index = (arrayTwo.length - middleLength) - 1;
@@ -151,16 +155,18 @@ class ArraysTesters
         int[] equalLengthArray = {2, 3, 4};
 
         int[] oneThree = {1, 3};
+        int[] oneTwo = {1, 2};
+        int[] three = {3};
         int[] justTwo = {2};
 
         int[] emptyArray = {};
 
         int[] oneOne = {1, 1};
-        int[] oneTwo = {1, 2};
+        //int[] oneTwo = {1, 2};
 
         int[] onesAndThrees = {1, 1, 3, 3};
         int[] oneAndThrees2 = {1, 1, 3, 3};
 
-        double answer = rawrs.findMedianSortedArrays(onesAndThrees, oneAndThrees2);
+        double answer = rawrs.findMedianSortedArrays(oneTwo, three);
     }
 }
