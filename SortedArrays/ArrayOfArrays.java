@@ -20,7 +20,7 @@ public class ArrayOfArrays
     }
 
     /**
-     * FIrst Array is the largest of the input
+     * First Array is the smallest of the input
      * @param arrayOne int[]
      * @param arrayTwo int[]
      * @return double
@@ -32,7 +32,7 @@ public class ArrayOfArrays
 
         if (arrayOne.length == arrayTwo.length)
         {
-
+            return ((double)(arrayOne[arrayOne.length - 1] + arrayTwo[0]) / 2;
         }
 
         if (totalLength % 2 == 0)
