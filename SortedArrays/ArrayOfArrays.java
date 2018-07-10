@@ -110,7 +110,7 @@ public class ArrayOfArrays
     {
 
         int current = 0;
-        while(arrayOne[0] < arrayTwo[arrayTwo.length - 1])
+        while(arrayOne[0] <= arrayTwo[arrayTwo.length - 1])
         {
 
 
@@ -151,7 +151,9 @@ class ArraysTesters
         int[] oneOne = {1, 1};
         int[] oneTwo = {1, 2};
 
+        int[] onesAndThrees = {1, 1, 3, 3};
+        int[] oneAndThrees2 = {1, 1, 3, 3};
 
-        double answer = rawrs.findMedianSortedArrays(oneOne, oneTwo);
+        double answer = rawrs.findMedianSortedArrays(onesAndThrees, oneAndThrees2);
     }
 }
