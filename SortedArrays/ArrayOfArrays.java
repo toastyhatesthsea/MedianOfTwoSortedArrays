@@ -169,16 +169,23 @@ public class ArrayOfArrays
     public int[] sortArrays2(int[] arrayOne, int[] arrayTwo)
     {
         int[] answer;
+        int anchor;
         if (arrayOne[arrayOne.length - 1] > arrayTwo[arrayTwo.length - 1])
         {
             answer = Arrays.copyOfRange(arrayTwo, 0, arrayOne.length + arrayTwo.length);
             System.arraycopy(arrayOne, 0, answer, arrayTwo.length, arrayOne.length);
+            anchor = arrayTwo.length;
         }
         else
         {
             answer = Arrays.copyOfRange(arrayOne, 0, arrayOne.length + arrayTwo.length);
             System.arraycopy(arrayTwo, 0, answer, arrayOne.length, arrayTwo.length);
+            anchor = arrayOne.length;
         }
+
+        int current = 0;
+
+        while(answer[current] < )
 
         return answer;
     }
