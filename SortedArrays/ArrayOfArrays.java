@@ -9,13 +9,14 @@ public class ArrayOfArrays
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
+        //First Array has largest integer
         if (nums1[nums1.length - 1] > nums2[nums2.length - 1])
         {
-            return sortArrays(nums1, nums2);
+            sortArrays(nums1, nums2);
         }
         else
         {
-            return sortArrays(nums2, nums1);
+            sortArrays(nums2, nums1);
         }
     }
 
@@ -28,24 +29,25 @@ public class ArrayOfArrays
     public double calculateMedian(int[] arrayOne, int[] arrayTwo)
     {
         int totalLength = arrayOne.length + arrayTwo.length;
+        int middleLength = totalLength / 2;
         double answer = 0;
 
         if (arrayOne.length == arrayTwo.length)
         {
-            return ((double)(arrayOne[arrayOne.length - 1] + arrayTwo[0]) / 2;
+            return ((double)(arrayOne[arrayOne.length - 1] + arrayTwo[0]) / 2);
         }
 
-        if (totalLength % 2 == 0)
+        //Uneven arrays
+        if (totalLength % 2 != 0)
         {
-            int middle = totalLength / 2;
-            int rightBeforeMiddle = middle - 1;
-
-            if (middle < arrayOne.length - 1)
-            {
-
-            }
+            int index = (arrayTwo.length - middleLength) - 1;
+        }
+        else
+        {
 
         }
+
+
     }
 
 
