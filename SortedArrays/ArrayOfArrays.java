@@ -90,8 +90,8 @@ public class ArrayOfArrays
         }
         else
         {
-            smallestDigitArray = arrayTwo;
-            largestDigitArray = arrayOne;
+            smallestDigitArray = arrayOne;
+            largestDigitArray = arrayTwo;
         }
 
         if (arrayOne.length == arrayTwo.length)
@@ -193,6 +193,6 @@ class ArraysTesters
         int[] onesAndThrees = {1, 1, 3, 3};
         int[] oneAndThrees2 = {1, 1, 3, 3};
 
-        double answer = rawrs.findMedianSortedArrays(oneTwo, three);
+        double answer = rawrs.findMedianSortedArrays(oneThree, justTwo);
     }
 }
