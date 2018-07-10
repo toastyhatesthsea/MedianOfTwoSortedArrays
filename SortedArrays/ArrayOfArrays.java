@@ -140,9 +140,9 @@ public class ArrayOfArrays
     {
 
         int current = 0;
-        while(arrayOne[0] < arrayTwo[arrayTwo.length - 1])
+        int arrayOneIndex = 0;
+        while(arrayOneIndex < arrayOne.length-1  && arrayOne[arrayOneIndex] < arrayTwo[arrayTwo.length - 1])
         {
-
 
             while (arrayTwo[current] <= arrayOne[0])
             {
@@ -162,7 +162,25 @@ public class ArrayOfArrays
                 arrayOne[1] = arrayOne[0];
                 arrayOne[0] = temp;
             }
+            arrayOneIndex++;
         }
+    }
+
+    public int[] sortArrays2(int[] arrayOne, int[] arrayTwo)
+    {
+        int[] answer;
+        if (arrayOne[arrayOne.length - 1] > arrayTwo[arrayTwo.length - 1])
+        {
+            answer = Arrays.copyOfRange(arrayTwo, 0, arrayOne.length + arrayTwo.length);
+            System.arraycopy(arrayOne, 0, answer, arrayTwo.length, arrayOne.length);
+        }
+        else
+        {
+            answer = Arrays.copyOfRange(arrayOne, 0, arrayOne.length + arrayTwo.length);
+            System.arraycopy(arrayTwo, 0, answer, arrayOne.length, arrayTwo.length);
+        }
+
+        return answer;
     }
 
 }
@@ -193,6 +211,9 @@ class ArraysTesters
         int[] onesAndThrees = {1, 1, 3, 3};
         int[] oneAndThrees2 = {1, 1, 3, 3};
 
-        double answer = rawrs.findMedianSortedArrays(oneThree, justTwo);
+        int[] justFour = {4};
+        int[] oneThruFive = {1, 2, 3, 5};
+
+        int[] answer = rawrs.sortArrays2(justFour, oneThruFive);
     }
 }
