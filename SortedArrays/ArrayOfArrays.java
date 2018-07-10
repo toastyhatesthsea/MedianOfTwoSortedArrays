@@ -80,26 +80,52 @@ public class ArrayOfArrays
         int totalLength = arrayOne.length + arrayTwo.length;
         int middleLength = totalLength / 2;
         double answer = 0;
+        int[] largestDigitArray;
+        int[] smallestDigitArray;
 
-        if (arrayOne.length == arrayTwo.length)
+        if (arrayOne[0] > arrayTwo[arrayTwo.length - 1])
         {
-            return ((double)(arrayOne[arrayOne.length - 1] + arrayTwo[0]) / 2);
-        }
-
-        //Uneven arrays
-
-
-
-        if (totalLength % 2 != 0)
-        {
-            int index = (arrayTwo.length - middleLength) - 1;
-            return (double)arrayTwo[index];
+            largestDigitArray = arrayOne;
+            smallestDigitArray = arrayTwo;
         }
         else
         {
-            int firstIndex = (arrayTwo.length - middleLength) - 1;
-            int secondIndex = firstIndex + 1;
-            return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
+            smallestDigitArray = arrayTwo;
+            largestDigitArray = arrayOne;
+        }
+
+        if (arrayOne.length == arrayTwo.length)
+        {
+            return ((double)(smallestDigitArray[arrayOne.length - 1] + largestDigitArray[0]) / 2);
+        }
+
+        //Uneven arrays
+        if (totalLength % 2 != 0)
+        {
+            if (smallestDigitArray.length > largestDigitArray.length)
+            {
+                return (double) smallestDigitArray[middleLength];
+            }
+            else
+            {
+                int index = (arrayTwo.length - middleLength) - 1;
+                return (double)arrayTwo[index];
+            }
+        }
+        else
+        {
+            if (smallestDigitArray.length > largestDigitArray.length)
+            {
+                int firstIndex = (smallestDigitArray.length - middleLength);
+                int secondIndex = firstIndex + 1;
+                return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
+            }
+            else
+            {
+                int firstIndex = (arrayTwo.length - middleLength) - 1;
+                int secondIndex = firstIndex + 1;
+                return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
+            }
         }
     }
 
