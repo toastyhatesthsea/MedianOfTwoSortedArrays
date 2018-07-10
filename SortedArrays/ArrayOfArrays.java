@@ -11,9 +11,26 @@ public class ArrayOfArrays
 
         if (nums1.length == 0)
         {
+            int middle = nums2.length / 2;
             if (nums2.length % 2 == 0)
             {
-
+                return ((double) nums2[middle] + nums2[middle - 1]) / 2;
+            }
+            else
+            {
+                return (double) nums2[middle];
+            }
+        }
+        else if (nums2.length == 0)
+        {
+            int middle = nums1.length / 2;
+            if (nums1.length % 2 == 0)
+            {
+                return ((double) nums1[middle] + nums2[middle - 1]) / 2;
+            }
+            else
+            {
+                return (double) nums1[middle];
             }
         }
 
