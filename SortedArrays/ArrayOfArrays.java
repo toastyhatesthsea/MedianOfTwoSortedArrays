@@ -9,6 +9,14 @@ public class ArrayOfArrays
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
+        if (nums1.length == 0)
+        {
+            if (nums2.length % 2 == 0)
+            {
+
+            }
+        }
+
         double answer = 0;
         //First Array has largest integer
         if (nums1[nums1.length - 1] > nums2[nums2.length - 1])
@@ -110,6 +118,9 @@ class ArraysTesters
         int[] oneThree = {1, 3};
         int[] justTwo = {2};
 
-        double answer = rawrs.findMedianSortedArrays(oneThree, justTwo);
+        int[] emptyArray = {};
+
+
+        double answer = rawrs.findMedianSortedArrays(emptyArray, justTwo);
     }
 }
