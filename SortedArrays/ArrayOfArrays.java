@@ -9,6 +9,7 @@ public class ArrayOfArrays
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
+        double answer = 0;
         //First Array has largest integer
         if (nums1[nums1.length - 1] > nums2[nums2.length - 1])
         {
@@ -17,6 +18,16 @@ public class ArrayOfArrays
         else
         {
             sortArrays(nums2, nums1);
+        }
+
+        if (nums1.length < nums2.length)
+        {
+            //Place smallest array first in parameters
+            answer = calculateMedian(nums1, nums2);
+        }
+        else
+        {
+            answer = calculateMedian(nums2, nums1);
         }
     }
 
@@ -49,8 +60,6 @@ public class ArrayOfArrays
             int secondIndex = firstIndex + 1;
             return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
         }
-
-
     }
 
 
