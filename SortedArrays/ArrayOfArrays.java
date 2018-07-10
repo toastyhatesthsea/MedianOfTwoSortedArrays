@@ -110,7 +110,7 @@ public class ArrayOfArrays
     {
 
         int current = 0;
-        while(arrayOne[0] <= arrayTwo[arrayTwo.length - 1])
+        while(arrayOne[0] < arrayTwo[arrayTwo.length - 1])
         {
 
 
@@ -124,6 +124,13 @@ public class ArrayOfArrays
                 int temp = arrayOne[0];
                 arrayOne[0] = arrayTwo[current];
                 arrayTwo[current] = temp;
+            }
+
+            if (arrayOne.length > 1 && arrayOne[0] > arrayOne[1])
+            {
+                int temp = arrayOne[1];
+                arrayOne[1] = arrayOne[0];
+                arrayOne[0] = temp;
             }
         }
     }
