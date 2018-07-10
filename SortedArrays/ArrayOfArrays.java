@@ -19,6 +19,35 @@ public class ArrayOfArrays
         }
     }
 
+    /**
+     * FIrst Array is the largest of the input
+     * @param arrayOne int[]
+     * @param arrayTwo int[]
+     * @return double
+     */
+    public double calculateMedian(int[] arrayOne, int[] arrayTwo)
+    {
+        int totalLength = arrayOne.length + arrayTwo.length;
+        double answer = 0;
+
+        if (arrayOne.length == arrayTwo.length)
+        {
+
+        }
+
+        if (totalLength % 2 == 0)
+        {
+            int middle = totalLength / 2;
+            int rightBeforeMiddle = middle - 1;
+
+            if (middle < arrayOne.length - 1)
+            {
+
+            }
+
+        }
+    }
+
 
     /**
      * Sorts first array into second array
@@ -26,14 +55,15 @@ public class ArrayOfArrays
      * @param arrayTwo int[]
      * @return double
      */
-    public double sortArrays(int[] arrayOne, int[] arrayTwo)
+    public void sortArrays(int[] arrayOne, int[] arrayTwo)
     {
 
-        if(arrayOne[0] < arrayTwo[arrayTwo.length - 1])
+        int current = 0;
+        while(arrayOne[0] < arrayTwo[arrayTwo.length - 1])
         {
-            int current = 0;
 
-            while (arrayTwo[current] < arrayOne[0])
+
+            while (arrayTwo[current] <= arrayOne[0])
             {
                 current++;
             }
@@ -45,8 +75,6 @@ public class ArrayOfArrays
                 arrayTwo[current] = temp;
             }
         }
-
-        return 0;
     }
 
 }
@@ -67,6 +95,6 @@ class ArraysTesters
         int[] oneThree = {1, 3};
         int[] justTwo = {2};
 
-        double answer = rawrs.sortArrays(secondArray, firstArray);
+        double answer = rawrs.sortArrays(firstArray, equalLengthArray);
     }
 }
