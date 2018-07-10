@@ -185,7 +185,25 @@ public class ArrayOfArrays
 
         int current = 0;
 
-        while(answer[current] < )
+        while (answer[anchor -1] > answer[anchor])
+        {
+            while (answer[current] <= answer[anchor])
+            {
+                current++;
+            }
+
+            if (answer[current] > answer[anchor])
+            {
+                int temp = answer[anchor];
+                answer[anchor] = answer[current];
+                answer[current] = temp;
+            }
+
+            if (answer[anchor] > answer[anchor + 1])
+            {
+                anchor++;
+            }
+        }
 
         return answer;
     }
@@ -202,8 +220,8 @@ class ArraysTesters
         int[] secondArray = {6, 7};
 
         int[] firstArrayBigger = {5, 6, 7};
-        int[] secondArraySmaller = {2, 4};
-        int[] equalLengthArray = {2, 3, 4};
+        int[] secondArraySmaller = {2, 4, 5, 7, 8, 60};
+        int[] equalLengthArray = {2, 3, 4, 8, 10, 50, 45};
 
         int[] oneThree = {1, 3};
         int[] oneTwo = {1, 2};
@@ -221,6 +239,6 @@ class ArraysTesters
         int[] justFour = {4};
         int[] oneThruFive = {1, 2, 3, 5};
 
-        int[] answer = rawrs.sortArrays2(justFour, oneThruFive);
+        int[] answer = rawrs.sortArrays2(secondArraySmaller, equalLengthArray);
     }
 }
