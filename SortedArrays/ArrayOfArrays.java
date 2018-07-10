@@ -26,7 +26,7 @@ public class ArrayOfArrays
             int middle = nums1.length / 2;
             if (nums1.length % 2 == 0)
             {
-                return ((double) nums1[middle] + nums2[middle - 1]) / 2;
+                return ((double) nums1[middle] + nums1[middle - 1]) / 2;
             }
             else
             {
@@ -50,9 +50,20 @@ public class ArrayOfArrays
             //Place smallest array first in parameters
             answer = calculateMedian(nums1, nums2);
         }
-        else
+        else if(nums2.length < nums1.length)
         {
             answer = calculateMedian(nums2, nums1);
+        }
+        else
+        {
+            if (nums2[0] >= nums1[nums1.length - 1])
+            {
+                answer = calculateMedian(nums1, nums2);
+            }
+            else
+            {
+                answer = calculateMedian(nums2, nums1);
+            }
         }
         return answer;
     }
@@ -137,7 +148,10 @@ class ArraysTesters
 
         int[] emptyArray = {};
 
+        int[] oneOne = {1, 1};
+        int[] oneTwo = {1, 2};
 
-        double answer = rawrs.findMedianSortedArrays(emptyArray, justTwo);
+
+        double answer = rawrs.findMedianSortedArrays(oneOne, oneTwo);
     }
 }
