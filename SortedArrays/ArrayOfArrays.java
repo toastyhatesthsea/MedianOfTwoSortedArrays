@@ -29,6 +29,7 @@ public class ArrayOfArrays
         {
             answer = calculateMedian(nums2, nums1);
         }
+        return answer;
     }
 
     /**
@@ -109,6 +110,6 @@ class ArraysTesters
         int[] oneThree = {1, 3};
         int[] justTwo = {2};
 
-        double answer = rawrs.sortArrays(firstArray, equalLengthArray);
+        double answer = rawrs.findMedianSortedArrays(oneThree, justTwo);
     }
 }
