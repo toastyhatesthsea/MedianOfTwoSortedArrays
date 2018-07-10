@@ -41,10 +41,13 @@ public class ArrayOfArrays
         if (totalLength % 2 != 0)
         {
             int index = (arrayTwo.length - middleLength) - 1;
+            return (double)arrayTwo[index];
         }
         else
         {
-
+            int firstIndex = (arrayTwo.length - middleLength) - 1;
+            int secondIndex = firstIndex + 1;
+            return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
         }
 
 
