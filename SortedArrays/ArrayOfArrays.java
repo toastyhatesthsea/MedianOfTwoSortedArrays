@@ -71,62 +71,25 @@ public class ArrayOfArrays
 
     /**
      * First Array is the smallest of the input
-     * @param arrayOne int[]
-     * @param arrayTwo int[]
+     * @param anArray int[]
      * @return double
      */
-    public double calculateMedian(int[] arrayOne, int[] arrayTwo)
+    public double calculateMedian(int[] anArray)
     {
-        int totalLength = arrayOne.length + arrayTwo.length;
+        int totalLength = anArray.length;
         int middleLength = totalLength / 2;
         double answer = 0;
-        int[] largestDigitArray;
-        int[] smallestDigitArray;
 
-        if (arrayOne[0] > arrayTwo[arrayTwo.length - 1])
+        if (totalLength % 2 == 0)
         {
-            largestDigitArray = arrayOne;
-            smallestDigitArray = arrayTwo;
+            answer = ((double)anArray[middleLength] + anArray[middleLength - 1]) / 2 ;
         }
         else
         {
-            smallestDigitArray = arrayOne;
-            largestDigitArray = arrayTwo;
+            answer = anArray[middleLength];
         }
 
-        if (arrayOne.length == arrayTwo.length)
-        {
-            return ((double)(smallestDigitArray[arrayOne.length - 1] + largestDigitArray[0]) / 2);
-        }
-
-        //Uneven arrays
-        if (totalLength % 2 != 0)
-        {
-            if (smallestDigitArray.length > largestDigitArray.length)
-            {
-                return (double) smallestDigitArray[middleLength];
-            }
-            else
-            {
-                int index = (arrayTwo.length - middleLength) - 1;
-                return (double)arrayTwo[index];
-            }
-        }
-        else
-        {
-            if (smallestDigitArray.length > largestDigitArray.length)
-            {
-                int firstIndex = (smallestDigitArray.length - middleLength);
-                int secondIndex = firstIndex + 1;
-                return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
-            }
-            else
-            {
-                int firstIndex = (arrayTwo.length - middleLength) - 1;
-                int secondIndex = firstIndex + 1;
-                return (((double)arrayTwo[firstIndex] + arrayTwo[secondIndex]) / 2);
-            }
-        }
+        return answer;
     }
 
 
