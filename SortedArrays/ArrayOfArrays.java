@@ -95,10 +95,15 @@ public class ArrayOfArrays
                 answer[current] = temp;
             }
 
-            if (answer[anchor] > answer[anchor + 1])
+            int savedAnchor = anchor;
+            while ((anchor + 1 < answer.length-1) && answer[anchor] > answer[anchor + 1])
             {
+                int temp = answer[anchor];
+                answer[anchor] = answer[anchor + 1];
+                answer[anchor + 1] = temp;
                 anchor++;
             }
+            anchor = savedAnchor;
         }
 
         return answer;
@@ -137,6 +142,6 @@ class ArraysTesters
         int[] newTest = {1, 2, 6};
         int[] newTest2 = {3, 4, 5};
 
-        double answer = rawrs.findMedianSortedArrays(newTest, newTest2);
+        double answer = rawrs.findMedianSortedArrays(secondArraySmaller, oneAndThrees2);
     }
 }
