@@ -34,39 +34,8 @@ public class ArrayOfArrays
             }
         }
 
-        double answer = 0;
-        //First Array has largest integer
-        //Puts the array with the largest last digit as first parameter
-        if (nums1[nums1.length - 1] > nums2[nums2.length - 1])
-        {
-            sortArrays(nums1, nums2);
-        }
-        else
-        {
-            sortArrays(nums2, nums1);
-        }
-
-        if (nums1.length < nums2.length)
-        {
-            //Place smallest array first in parameters
-            answer = calculateMedian(nums1, nums2);
-        }
-        else if(nums2.length < nums1.length)
-        {
-            answer = calculateMedian(nums2, nums1);
-        }
-        else
-        {
-            if (nums2[0] >= nums1[nums1.length - 1])
-            {
-                answer = calculateMedian(nums1, nums2);
-            }
-            else
-            {
-                answer = calculateMedian(nums2, nums1);
-            }
-        }
-        return answer;
+        int[] combinedArray = sortArrays2(nums1, nums2);
+        return calculateMedian(combinedArray);
     }
 
     /**
@@ -92,42 +61,6 @@ public class ArrayOfArrays
         return answer;
     }
 
-
-    /**
-     * Sorts first array into second array
-     * @param arrayOne int[]
-     * @param arrayTwo int[]
-     * @return double
-     */
-    public void sortArrays(int[] arrayOne, int[] arrayTwo)
-    {
-
-        int current = 0;
-        int arrayOneIndex = 0;
-        while(arrayOneIndex < arrayOne.length-1  && arrayOne[arrayOneIndex] < arrayTwo[arrayTwo.length - 1])
-        {
-
-            while (arrayTwo[current] <= arrayOne[0])
-            {
-                current++;
-            }
-
-            if (arrayTwo[current] > arrayOne[0])
-            {
-                int temp = arrayOne[0];
-                arrayOne[0] = arrayTwo[current];
-                arrayTwo[current] = temp;
-            }
-
-            if (arrayOne.length > 1 && arrayOne[0] > arrayOne[1])
-            {
-                int temp = arrayOne[1];
-                arrayOne[1] = arrayOne[0];
-                arrayOne[0] = temp;
-            }
-            arrayOneIndex++;
-        }
-    }
 
     public int[] sortArrays2(int[] arrayOne, int[] arrayTwo)
     {
@@ -170,7 +103,6 @@ public class ArrayOfArrays
 
         return answer;
     }
-
 }
 
 class ArraysTesters
@@ -202,6 +134,6 @@ class ArraysTesters
         int[] justFour = {4};
         int[] oneThruFive = {1, 2, 3, 5};
 
-        int[] answer = rawrs.sortArrays2(secondArraySmaller, equalLengthArray);
+        double answer = rawrs.findMedianSortedArrays(secondArraySmaller, equalLengthArray);
     }
 }
