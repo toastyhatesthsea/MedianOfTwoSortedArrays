@@ -134,6 +134,9 @@ class ArraysTesters
         int[] justFour = {4};
         int[] oneThruFive = {1, 2, 3, 5};
 
-        double answer = rawrs.findMedianSortedArrays(secondArraySmaller, equalLengthArray);
+        int[] newTest = {1, 2, 6};
+        int[] newTest2 = {3, 4, 5};
+
+        double answer = rawrs.findMedianSortedArrays(newTest, newTest2);
     }
 }
