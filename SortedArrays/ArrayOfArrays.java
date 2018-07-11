@@ -70,7 +70,7 @@ public class ArrayOfArrays
      * Combines two sorted arrays into one. Then sorts the combined array by first comparing the first element of the first array
      * and the first element of the second array. If the first element of the first array is larger than the first element of the second array,
      * they swap places and then the placement in the second array compares itself to the next element and continues to swap elements
-     * untilthe anchor point element is smaller/equal than the next element. The anchor point then resets itself back to the original index of
+     * until the anchor point element is smaller/equal than the next element. The anchor point then resets itself back to the original index of
      * the first array in the combined array.
      * @param arrayOne int[]
      * @param arrayTwo int[]
