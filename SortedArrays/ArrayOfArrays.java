@@ -1,12 +1,16 @@
 package SortedArrays;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayOfArrays
 {
 
+    /**
+     * Finds the median of arrays that have been sorted already. If one of the arrays is empty, it just finds the median on a single array
+     * @param nums1 int[]
+     * @param nums2 int[]
+     * @return double
+     */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
         if (nums1.length == 0)
@@ -39,7 +43,7 @@ public class ArrayOfArrays
     }
 
     /**
-     * First Array is the smallest of the input
+     * Calculates the median of a sorted array
      * @param anArray int[]
      * @return double
      */
@@ -62,6 +66,16 @@ public class ArrayOfArrays
     }
 
 
+    /**
+     * Combines two sorted arrays into one. Then sorts the combined array by first comparing the first element of the first array
+     * and the first element of the second array. If the first element of the first array is larger than the first element of the second array,
+     * they swap places and then the placement in the second array compares itself to the next element and continues to swap elements
+     * untilthe anchor point element is smaller/equal than the next element. The anchor point then resets itself back to the original index of
+     * the first array in the combined array.
+     * @param arrayOne int[]
+     * @param arrayTwo int[]
+     * @return int[]
+     */
     public int[] sortArrays2(int[] arrayOne, int[] arrayTwo)
     {
         int[] answer;
